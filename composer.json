@@ -1,0 +1,24 @@
+{
+    "name": "bas/ip2region",
+    "description": "ip2region for Ads",
+    "type": "library",
+    "require": {
+        "php": ">=7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.5"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "蕭木",
+            "email": "xsharp@justdn.com"
+        }
+    ],
+    "autoload": {
+        "classmap": [
+            "src/"
+        ]
+    },
+    "minimum-stability": "stable"
+}

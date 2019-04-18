@@ -1,0 +1,7 @@
+<phpunit colors="true" bootstrap="./vendor/autoload.php">
+    <testsuites>
+        <testsuite name="Ip2region Testing">
+            <directory>tests</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>

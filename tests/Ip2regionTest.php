@@ -1,11 +1,18 @@
 <?php
+/**
+ * This file is part of Ip2region.
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
+namespace Bas\Ip2region;
 
 use Bas\Ip2region\Ip2region as Ip;
 use PHPUnit\Framework\TestCase;
 
 class Ip2regionTest extends TestCase
 {
-
     private $ip;
 
     protected function setUp()

@@ -1,5 +1,10 @@
 <?php
-
+/**
+ * This file is part of Ip2region.
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
 return [
     '110000' => '北京市',
     '110100' => '北京市-市辖区',

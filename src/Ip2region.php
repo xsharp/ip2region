@@ -76,8 +76,8 @@ class Ip2region
             }
 
             $this->firstIndexPtr = self::getLong($this->dbBinStr, 0);
-            $this->lastIndexPtr = self::getLong($this->dbBinStr, 4);
-            $this->totalBlocks = ($this->lastIndexPtr - $this->firstIndexPtr) / INDEX_BLOCK_LENGTH + 1;
+            $this->lastIndexPtr  = self::getLong($this->dbBinStr, 4);
+            $this->totalBlocks   = ($this->lastIndexPtr - $this->firstIndexPtr) / INDEX_BLOCK_LENGTH + 1;
         }
 
         if (is_string($ip)) {
@@ -85,12 +85,12 @@ class Ip2region
         }
 
         //binary search to define the data
-        $l = 0;
-        $h = $this->totalBlocks;
+        $l       = 0;
+        $h       = $this->totalBlocks;
         $dataPtr = 0;
         while ($l <= $h) {
-            $m = (($l + $h) >> 1);
-            $p = $this->firstIndexPtr + $m * INDEX_BLOCK_LENGTH;
+            $m   = (($l + $h) >> 1);
+            $p   = $this->firstIndexPtr + $m * INDEX_BLOCK_LENGTH;
             $sip = self::getLong($this->dbBinStr, $p);
             if ($ip < $sip) {
                 $h = $m - 1;
@@ -175,7 +175,7 @@ class Ip2region
     public static function getRegionCodeByIp($ip)
     {
         $info = self::getRegionInfoByIp($ip);
-        $tmp = explode('|', $info);
+        $tmp  = explode('|', $info);
 
         return isset($tmp[1]) ? $tmp[1] : '0';
     }
@@ -190,7 +190,7 @@ class Ip2region
     public static function getRegionNameByIp($ip)
     {
         $info = self::getRegionInfoByIp($ip);
-        $tmp = explode('|', $info);
+        $tmp  = explode('|', $info);
         if (!isset($tmp[1])) {
             return null;
         }
@@ -208,8 +208,8 @@ class Ip2region
      * 根据 IP 获取城市信息.
      *
      * .eg
-     * 156|310107|CTCC
-     * 国家代码 | 地区代码 | 运营商
+     * 156|310107|CMCC
+     * 国家代码|地区代码|运营商
      *
      * @param string $ip IPv4
      * @return string|null
